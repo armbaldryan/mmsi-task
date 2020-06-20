@@ -9,20 +9,20 @@ const initialState: SquarePositionType = {
 
 const getLeftPosition = (type: string, value: number): number => {
   if (type === "left" && value !== 0) {
-    return value - 1;
+    return value - 10;
   }
   if (type === "right" && value !== 100) {
-    return value + 1;
+    return value + 10;
   }
   return value;
 };
 
 const getTopPosition = (type: string, value: number): number => {
   if (type === "top" && value !== 0) {
-    return value - 1;
+    return value - 10;
   }
   if (type === "bottom" && value !== 100) {
-    return value + 1;
+    return value + 10;
   }
   return value;
 };
