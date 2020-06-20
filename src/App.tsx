@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Square from "./components/Square";
 import Button from "./components/Button";
 import { setMiddleBoxSize } from "./store/actions/boxSize.action";
-import { AppContainer, Middle, EmptyBox, Board, Box } from "./styles";
+import { AppContainer, Row, EmptyBox, Board, Column } from "./styles";
 
 function App() {
   const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
@@ -17,41 +17,41 @@ function App() {
 
   return (
     <AppContainer>
-      <Box grow={1}>
-        <Middle grow={1}>
+      <Row grow={1}>
+        <Column grow={1}>
           <EmptyBox />
-        </Middle>
-        <Middle grow={3}>
+        </Column>
+        <Column grow={3}>
           <Button type="top" />
-        </Middle>
-        <Middle grow={1}>
+        </Column>
+        <Column grow={1}>
           <EmptyBox />
-        </Middle>
-      </Box>
-      <Box grow={3}>
-        <Middle grow={1}>
+        </Column>
+      </Row>
+      <Row grow={3}>
+        <Column grow={1}>
           <Button type="left" />
-        </Middle>
-        <Middle grow={3}>
+        </Column>
+        <Column grow={3}>
           <Board ref={ref}>
             <Square />
           </Board>
-        </Middle>
-        <Middle grow={1}>
+        </Column>
+        <Column grow={1}>
           <Button type="right" />
-        </Middle>
-      </Box>
-      <Box grow={1}>
-        <Middle grow={1}>
+        </Column>
+      </Row>
+      <Row grow={1}>
+        <Column grow={1}>
           <EmptyBox />
-        </Middle>
-        <Middle grow={3}>
+        </Column>
+        <Column grow={3}>
           <Button type="bottom" />
-        </Middle>
-        <Middle grow={1}>
+        </Column>
+        <Column grow={1}>
           <EmptyBox />
-        </Middle>
-      </Box>
+        </Column>
+      </Row>
     </AppContainer>
   );
 }

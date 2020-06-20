@@ -80,14 +80,14 @@ export const AppContainer = styled.div`
   background-color: #ececec;
 `;
 
-export const Middle = styled.div`
+export const Column = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: ${({ grow }: { grow: number }): number => grow};
   flex-shrink: 0;
 `;
 
-export const Box = styled.div`
+export const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: ${({ grow }: { grow: number }): number => grow};
