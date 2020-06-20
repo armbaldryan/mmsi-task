@@ -2,15 +2,15 @@ import React, { useRef, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import Square from "./components/Square";
 import Button from "./components/Button";
-import { AppContainer, Middle, EmptyBox, Board, Box } from "./styles";
 import { setMiddleBoxSize } from "./store/actions/boxSize.action";
+import { AppContainer, Middle, EmptyBox, Board, Box } from "./styles";
 
 function App() {
-  const ref: any = useRef(null);
+  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
-    if (ref) {
+    if (ref && ref.current) {
       dispatch(setMiddleBoxSize(ref.current.getBoundingClientRect().toJSON()));
     }
   }, [dispatch, ref]);
